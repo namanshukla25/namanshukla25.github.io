@@ -42,3 +42,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
   console.log("Naman's portfolio is ready!");
 });
+
+const filterButtons = document.querySelectorAll(".filter-btn");
+const projectCards = document.querySelectorAll(".project-card");
+
+filterButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const selectedFilter = button.dataset.filter;
+
+    filterButtons.forEach((btn) => {
+      btn.classList.toggle("active", btn === button);
+    });
+
+    projectCards.forEach((card) => {
+      const categories = (card.dataset.category || "").split(" ");
+      const shouldShow =
+        selectedFilter === "all" ||
+        categories.includes(selectedFilter);
+
+      card.hidden = !shouldShow;
+    });
+  });
+});
+

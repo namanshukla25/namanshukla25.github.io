@@ -342,3 +342,127 @@ footer .logo { color: var(--text); }
     transition: none;
   }
 }
+
+/* Interactive project filters */
+.project-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 28px 0;
+}
+
+.filter-btn {
+  padding: 10px 18px;
+  border: 1px solid rgba(150, 140, 255, 0.25);
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.03);
+  color: #c8c6df;
+  font: inherit;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: linear-gradient(120deg, #725cff, #3c9cff);
+  color: #ffffff;
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(100, 90, 255, 0.2);
+}
+
+/* Project card hover animation */
+.project-card {
+  transition: transform 0.25s ease, border-color 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(130, 110, 255, 0.55);
+}
+
+.project-card[hidden] {
+  display: none !important;
+}
+
+/* Skill card hover animation */
+.skill-card {
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(130, 110, 255, 0.55);
+}
+
+@media (max-width: 600px) {
+  .project-filters {
+    gap: 8px;
+  }
+
+  .filter-btn {
+    padding: 8px 13px;
+    font-size: 13px;
+  }
+}
+
+/* PROFILE PHOTO - PREMIUM STYLE */
+.profile-photo-wrap {
+  position: relative;
+  width: 230px;
+  margin: 0 auto 28px;
+  text-align: center;
+  z-index: 5;
+}
+
+.profile-photo {
+  display: block;
+  width: 210px;
+  height: 210px;
+  margin: 0 auto;
+  object-fit: cover;
+  object-position: center 25%;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  background:
+    linear-gradient(#0b1020, #0b1020) padding-box,
+    linear-gradient(135deg, #7c6cff, #42c7ff, #7c6cff) border-box;
+  box-shadow:
+    0 0 25px rgba(124, 108, 255, 0.28),
+    0 0 55px rgba(66, 199, 255, 0.12);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.profile-photo:hover {
+  transform: scale(1.05) translateY(-4px);
+  box-shadow:
+    0 0 35px rgba(124, 108, 255, 0.5),
+    0 0 70px rgba(66, 199, 255, 0.2);
+}
+
+.photo-status {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 8px 13px;
+  color: #b7f7df;
+  background: rgba(28, 180, 130, 0.1);
+  border: 1px solid rgba(76, 220, 170, 0.25);
+  border-radius: 30px;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 600px) {
+  .profile-photo-wrap {
+    width: 190px;
+    margin-bottom: 24px;
+  }
+
+  .profile-photo {
+    width: 175px;
+    height: 175px;
+  }
+}
+
